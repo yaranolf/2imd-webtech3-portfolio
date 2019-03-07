@@ -2,7 +2,8 @@
 
 ## Lab 1
 ### Working together on GIT
-[Opdracht 1: working together on GIT](gewone link)
+[Opdracht 1: working together on GIT](url)
+--> lukt (voorlopig) niet
 
 ### GIT IT
 ![GIT IT](https://github.com/yaranolf/2imd-webtech3-portfolio/blob/master/lab1-git/20190301_GitIt_Done.png)
