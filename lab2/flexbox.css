@@ -6,7 +6,6 @@
 nav ul{
     display: flex;
     justify-content: space-around;
-    max-height: 40px;
 }
 
 .logo{
@@ -27,4 +26,40 @@ nav ul{
 
 .graffiti{
     order: 5;
+}
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 600px){
+    nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-height: 40px;
+    }
+    
+    .logo{
+        align-self: baseline;
+        order: 1;
+    }
+    
+    .typography{
+        order: 2;
+    }
+    
+    .ui{
+        order: 3;
+    }
+    
+    .branding{
+        order: 4;
+    }
+    
+    .graffiti{
+        order: 5;
+    }
 }
