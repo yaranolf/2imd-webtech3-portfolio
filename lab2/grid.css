@@ -69,6 +69,7 @@ img{
     margin: auto;
 }
 
+/*
 @media screen and (max-width: 600px){
     .container{
         display: grid;
@@ -127,4 +128,4 @@ img{
         display: block;
         margin: auto;
     }
-}
+}*/
