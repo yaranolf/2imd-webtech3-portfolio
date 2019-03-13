@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+    list-style: none;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-around;
+    max-height: 40px;
+}
+
+.logo{
+    order: 3;
+}
+
+.typography{
+    order: 1;
+}
+
+.ui{
+    order: 2;
+}
+
+.branding{
+    order: 4;
+}
+
+.graffiti{
+    order: 5;
+}
