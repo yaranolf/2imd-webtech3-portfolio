@@ -16,3 +16,6 @@
 
 ### Responsive Festival Ticket (CSS Grid)
 https://codepen.io/yaranolf/pen/MxQBNN
+
+### IMDstagram (CSS Flexbox)
+https://codepen.io/yaranolf/pen/VRQVdK
