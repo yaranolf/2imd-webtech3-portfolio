@@ -1,7 +1,8 @@
 class Note {
   constructor(title) {
     this.title = title;
-    // HINT🤩 this.element = this.createElement(title);
+    console.log ("geklikt");
+    this.element = this.createElement(title);
   }
   
   createElement(title){
