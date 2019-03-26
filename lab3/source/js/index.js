@@ -10,7 +10,6 @@ class Note {
     //note aanmaken & remove btn bijvoegen
     let newNote = document.createElement('div');
     let removeBtn = document.createElement('a');
-    removeBtn.setAttribute("href", "#");
     removeBtn.innerHTML = 'Remove';
 
     // HINT🤩 a.addEventListener('click', this.remove.bind(newNote));
@@ -51,10 +50,14 @@ class Note {
     // HINT🤩 the meaning of 'this' was set by bind() in the createElement function
     // in this function, 'this' will refer to the current note element
 
+    //https://mariusschulz.com/blog/removing-elements-from-javascript-arrays
+
     let removeNote = JSON.parse(localStorage.getItem('note'));
     let noteIndex = removeNote.indexOf(this);
     removeNote.splice(noteIndex, 1);
     localStorage.setItem('note', JSON.stringify(removeNote));
+
+
   } 
 }
 
