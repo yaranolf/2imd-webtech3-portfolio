@@ -11,6 +11,7 @@ class Note {
     let newNote = document.createElement('div');
     let removeBtn = document.createElement('a');
     removeBtn.innerHTML = 'Remove';
+    
 
     // HINT🤩 a.addEventListener('click', this.remove.bind(newNote));
     removeBtn.addEventListener('click', this.remove.bind(newNote));
@@ -22,6 +23,8 @@ class Note {
     newNote.appendChild(content);
     newNote.appendChild(removeBtn);
     
+    newNote.classList.add("card");
+
     return newNote;
   }
   
@@ -52,12 +55,6 @@ class Note {
 
     //https://mariusschulz.com/blog/removing-elements-from-javascript-arrays
 
-    let removeNote = JSON.parse(localStorage.getItem('note'));
-    let noteIndex = removeNote.indexOf(this);
-    removeNote.splice(noteIndex, 1);
-    localStorage.setItem('note', JSON.stringify(removeNote));
-
-
   } 
 }
 
@@ -84,13 +81,19 @@ class App {
 
     let endOfInspiration = JSON.parse(localStorage.getItem('note'));
     if(endOfInspiration != null && (endOfInspiration).length > 0){
+      //for-loop?
       endOfInspiration.forEach(item => {
         let note = new Note(item);
         note.add();
       });
     }
   }
-   
+  
+  reset(){
+    // this function should reset the form 
+    document.querySelector('form').reset();
+  }
+
   createNote(e){
     // this function should create a new note by using the Note() class
     
@@ -105,10 +108,7 @@ class App {
     this.reset();
   }
   
-  reset(){
-    // this function should reset the form 
-    document.querySelector('form').reset();
-  }
+
 }
 
 let app = new App();
