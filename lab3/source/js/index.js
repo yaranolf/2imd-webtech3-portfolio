@@ -7,9 +7,18 @@ class Note {
   }
   
   createElement(title){
+    //note aanmaken & remove btn bijvoegen
     let newNote = document.createElement('div');
-    
-    a.addEventListener('click', this.remove.bind(newNote));
+    let removeBtn = document.createElement('a');
+    removeBtn.innerHTML = 'Remove';
+    removeBtn.addEventListener('click', this.remove.bind(newNote));
+
+    //'inhoud' note aanmaken
+    let content = document.createElement('p');
+    content.innerHTML = this.title;
+
+    newNote.appendChild(textInput);
+    newNote.appendChild(removeBtn);
     
     return newNote;
   }
@@ -17,6 +26,7 @@ class Note {
   add(){
     // HINT🤩
     // this function should append the note to the screen somehow
+    document.querySelector('.notes').appendChild(this.element);
   }
   
   saveToStorage(){
