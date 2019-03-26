@@ -47,6 +47,11 @@ class Note {
   remove(){
     // HINT🤩 the meaning of 'this' was set by bind() in the createElement function
     // in this function, 'this' will refer to the current note element
+
+    let removeNote = JSON.parse(localStorage.getItem('note'));
+    let noteIndex = removeNote.indexOf(this);
+    removeNote.splice(noteIndex, 1);
+    localStorage.setItem('note', JSON.stringify(removeNote));
   } 
 }
 
@@ -57,15 +62,20 @@ class App {
     // HINT🤩
     // clicking the button should work
     // pressing the enter key should also work
+    // this.btnAdd = ???
+    // this.btnAdd.addEventListener("click", this.createNote.bind(this));
+    // this.loadNotesFromStorage();
+
     this.btnAdd = document.querySelector("#btnAddNote");
     this.btnAdd.addEventListener("click", this.createNote.bind(this));
-    // this.loadNotesFromStorage();
+    this.loadNotesFromStorage();
   }
   
   loadNotesFromStorage() {
     // HINT🤩
     // load all notes from storage here and add them to the screen
     // something like note.add() in a loop would be nice
+    
   }
    
   createNote(e){
