@@ -75,7 +75,14 @@ class App {
     // HINT🤩
     // load all notes from storage here and add them to the screen
     // something like note.add() in a loop would be nice
-    
+
+    let endOfInspiration = JSON.parse(localStorage.getItem('note'));
+    if(endOfInspiration != null && (endOfInspiration).length > 0){
+      endOfInspiration.forEach(item => {
+        let note = new Note(item);
+        note.add();
+      });
+    }
   }
    
   createNote(e){
@@ -85,11 +92,16 @@ class App {
     // note.add();
     // note.saveToStorage();
     // this.reset();
-    let newnote = new Note();
+    let textInput = document.querySelector('#txtAddNote').nodeValue;
+    let newNote = new Note();
+    note.add();
+    note.saveToStorage();
+    this.reset();
   }
   
   reset(){
     // this function should reset the form 
+    document.querySelector('form').reset();
   }
   
 }
