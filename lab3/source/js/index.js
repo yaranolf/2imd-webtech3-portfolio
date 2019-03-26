@@ -8,7 +8,7 @@ class Note {
   createElement(title){
     let newNote = document.createElement('div');
     
-    // HINT🤩 a.addEventListener('click', this.remove.bind(newNote));
+    a.addEventListener('click', this.remove.bind(newNote));
     
     return newNote;
   }
