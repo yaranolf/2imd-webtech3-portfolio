@@ -10,6 +10,7 @@ class Note {
     //note aanmaken & remove btn bijvoegen
     let newNote = document.createElement('div');
     let removeBtn = document.createElement('a');
+    removeBtn.setAttribute("href", "#");
     removeBtn.innerHTML = 'Remove';
 
     // HINT🤩 a.addEventListener('click', this.remove.bind(newNote));
