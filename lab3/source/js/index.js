@@ -1,7 +1,7 @@
 class Note {
   constructor(title) {
     this.title = title;
-    console.log ("geklikt");
+    //console.log ("geklikt");
     this.element = this.createElement(title);
     // HINT🤩 this.element = this.createElement(title);
   }
@@ -11,13 +11,15 @@ class Note {
     let newNote = document.createElement('div');
     let removeBtn = document.createElement('a');
     removeBtn.innerHTML = 'Remove';
+
+    // HINT🤩 a.addEventListener('click', this.remove.bind(newNote));
     removeBtn.addEventListener('click', this.remove.bind(newNote));
 
     //'inhoud' note aanmaken
     let content = document.createElement('p');
     content.innerHTML = this.title;
 
-    newNote.appendChild(textInput);
+    newNote.appendChild(content);
     newNote.appendChild(removeBtn);
     
     return newNote;
@@ -66,7 +68,7 @@ class App {
     // this.btnAdd.addEventListener("click", this.createNote.bind(this));
     // this.loadNotesFromStorage();
 
-    this.btnAdd = document.querySelector("#btnAddNote");
+    this.btnAdd = document.getElementById('btnAddNote');
     this.btnAdd.addEventListener("click", this.createNote.bind(this));
     this.loadNotesFromStorage();
   }
@@ -92,8 +94,8 @@ class App {
     // note.add();
     // note.saveToStorage();
     // this.reset();
-    let textInput = document.querySelector('#txtAddNote').nodeValue;
-    let newNote = new Note();
+    let textInput = document.querySelector('#txtAddNote').value;
+    let note = new Note(textInput);
     note.add();
     note.saveToStorage();
     this.reset();
