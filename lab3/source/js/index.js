@@ -105,7 +105,6 @@ class App {
     // this function should reset the form 
     document.querySelector('form').reset();
   }
-  
 }
 
 let app = new App();
