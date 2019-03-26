@@ -3,6 +3,7 @@ class Note {
     this.title = title;
     console.log ("geklikt");
     this.element = this.createElement(title);
+    // HINT🤩 this.element = this.createElement(title);
   }
   
   createElement(title){
