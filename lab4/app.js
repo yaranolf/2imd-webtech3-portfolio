@@ -43,7 +43,7 @@ let app = new Weather('87d0b90aaed973175e9e8896d40716eb');
 class Giphy{
     constructor(API_KEY_GIPHY){
         this.API_KEY_GIPHY = API_KEY_GIPHY;
-        console.log("jow");
+        console.log("giphy");
         this.initialize();
     }
 
@@ -53,12 +53,13 @@ class Giphy{
 
     getGiphy(){
         let q = 'weather';
-        let urlGiphy = `https://api.giphy.com/v1/gifs/search?api_key=${this.API_KEY_GIPHY}&q${q}&limit=25&offset=0&rating=G&lang=en`;
+        let urlGiphy = `https://api.giphy.com/v1/gifs/search?api_key=${this.API_KEY_GIPHY}&q${q}&limit=25&offset=1&rating=G&lang=en`;
         fetch(urlGiphy)
         .then(response => {
             return response.json();
         })
         .then(json => {
+            console.log(JSON.stringify(json));
             let giphy = document.createElement("div");
             giphy.innerHTML = json.summary;
             document.querySelector("body").appendChild(giphy);

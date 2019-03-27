@@ -91,7 +91,7 @@ class App {
   
   reset(){
     // this function should reset the form 
-    document.querySelector('form').reset();
+    document.querySelector('#txtAddNote').value='';
   }
 
   createNote(e){
