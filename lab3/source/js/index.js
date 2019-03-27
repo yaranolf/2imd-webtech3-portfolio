@@ -9,10 +9,10 @@ class Note {
   createElement(title){
     //note aanmaken & remove btn bijvoegen
     let newNote = document.createElement('div');
+    newNote.classList.add('card');
     let removeBtn = document.createElement('a');
-    removeBtn.innerHTML = 'Remove';
+    removeBtn.innerHTML = "Remove";
     
-
     // HINT🤩 a.addEventListener('click', this.remove.bind(newNote));
     removeBtn.addEventListener('click', this.remove.bind(newNote));
 
@@ -22,8 +22,6 @@ class Note {
 
     newNote.appendChild(content);
     newNote.appendChild(removeBtn);
-    
-    newNote.classList.add("card");
 
     return newNote;
   }
@@ -39,14 +37,14 @@ class Note {
     // localStorage only supports strings, not arrays
     // if you want to store arrays, look at JSON.parse and JSON.stringify
 
-    let arr = JSON.parse(localStorage.getItem('note'));
+    let contentToStore = JSON.parse(localStorage.getItem('note'));
     
-    if(arr == null){
-      arr = [];
+    if(contentToStore == null){
+      contentToStore = [];
     }
 
-    arr.push(this.title);
-    localStorage.setItem(`note`, JSON.stringify(arr));
+    contentToStore.push(this.title);
+    localStorage.setItem(`note`, JSON.stringify(contentToStore));
     }
   
   remove(){
