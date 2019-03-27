@@ -52,7 +52,41 @@ class Giphy{
     }
 
     getGiphy(){
-        let urlGiphy = `https://api.giphy.com/v1/gifs/search?api_key=${this.API_KEY_GIPHY}&q=weather&limit=25&offset=0&rating=G&lang=en`;
+        let q = 'weather';
+        let urlGiphy = `https://api.giphy.com/v1/gifs/search?api_key=${this.API_KEY_GIPHY}&q${q}&limit=25&offset=0&rating=G&lang=en`;
+        fetch(urlGiphy)
+        .then(response => {
+            return response.json();
+        })
+        .then(json => {
+            let giphy = document.createElement("div");
+            giphy.innerHTML = json.summary;
+            document.querySelector("body").appendChild(giphy);
+            //console.log(json.currently.summary);
+            //console.log(json);
+        });
+    }
+}
+        /*fetch(urlGiphy)
+            .then(response => {
+                return response.json();
+            })
+            .then(json => {
+                let img = result.img;
+                let output = "";
+                for(var index in img){
+                    let giphyObj = img[index];
+                    let giphyUrl = giphyObj.images.original.url;
+                    console.log(giphyUrl);
+                    output += "<img width='200px' src='" + gifUrl + "'/>";
+                }
+                $("#container").html(output);
+            });
+    }*/
+
+    /*getGiphy(){
+        let q = 'weather';
+        let urlGiphy = `https://api.giphy.com/v1/gifs/search?api_key=${this.API_KEY_GIPHY}&q${q}&limit=25&offset=0&rating=G&lang=en`;
         
         fetch(urlGiphy)
             .then(response => {
@@ -63,8 +97,6 @@ class Giphy{
                 //giphy.innerHTML = json.currently.summary;
                 document.querySelector("body").appendChild(giphy);
         });
-    }
-}
+    }*/
 
-let app_Giphy = new Giphy('Gjxedg0F0pjq4IP3y0xxP8X63zYwc8cx');
-
+let appGiphy = new Giphy('Gjxedg0F0pjq4IP3y0xxP8X63zYwc8cx');
