@@ -63,6 +63,9 @@ class Giphy{
             let giphy = document.createElement("div");
 
             //images preview_webp --> uit JSON stringify en kunnen displayen in div
+            let media = Math.floor(Math.random()*5);
+            let imageID = results(id), imageID;
+            let urlImage = `https://media${media}.giphy.com/media/${imageID}/giphy-preview.webp`;
 
             //giphy.innerHTML = JSON.stringify(json);
             document.querySelector("body").appendChild(giphy);
