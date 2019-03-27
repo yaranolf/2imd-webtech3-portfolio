@@ -1,7 +1,7 @@
 class Weather{
     constructor(API_KEY){
         this.API_KEY = API_KEY;
-        console.log("jow");
+        console.log("API working ofwa");
         this.initialize();
     }
 
@@ -11,14 +11,14 @@ class Weather{
     }
 
     getMyLocation(){
-        console.log("Getting location");
+        console.log("Getting your location");
         navigator.geolocation.getCurrentPosition(position => { //function(position)
-        console.log("found you");
+        console.log("Found ya little bastard");
         let lat = position.coords.latitude;
         let lng = position.coords.longitude;
         this.getWeather(lat, lng);
     }, err => {
-        console.log("mispoes");
+        console.log("Didn't think so cutie");
     });
     }
 
@@ -43,7 +43,7 @@ let app = new Weather('87d0b90aaed973175e9e8896d40716eb');
 class Giphy{
     constructor(API_KEY_GIPHY){
         this.API_KEY_GIPHY = API_KEY_GIPHY;
-        console.log("giphy");
+        console.log("Giphy almost ready");
         this.initialize();
     }
 
@@ -59,15 +59,28 @@ class Giphy{
             return response.json();
         })
         .then(json => {
-            console.log(JSON.stringify(json));
+            console.log(json);
             let giphy = document.createElement("div");
 
-            //images preview_webp --> uit JSON stringify en kunnen displayen in div
+            //media in link gaat van 0 tot 4, randomizer
             let media = Math.floor(Math.random()*5);
-            let imageID = results(id), imageID;
-            let urlImage = `https://media${media}.giphy.com/media/${imageID}/giphy-preview.webp`;
 
-            //giphy.innerHTML = JSON.stringify(json);
+            //vloeken op de juiste syntax om id uit json response te krijgen
+            /*let data = JSON.parse(data);
+            for(let i = 0; i < data.length; i++){
+                let idImage = data[i].id;
+            }*/
+            //let idImage = JSON.parse({data},[id]);
+            //let idImage = JSON.parse(response.data[id]);
+            //let idImage = JSON.parse(response,{data:id});
+            //let idImage = JSON.parse(response.data),id;
+
+            let idImage = json.result[id];
+
+            //images preview_webp --> uit JSON stringify en kunnen displayen in div
+            let urlImage = `https://media${media}.giphy.com/media/${idImage}/giphy-preview.webp`;
+
+            giphy.innerHTML = `<img src=${urlImage}>`;
             document.querySelector("body").appendChild(giphy);
         });
     }
