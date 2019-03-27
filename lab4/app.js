@@ -40,3 +40,31 @@ class Weather{
 
 let app = new Weather('87d0b90aaed973175e9e8896d40716eb');
 
+class Giphy{
+    constructor(API_KEY_GIPHY){
+        this.API_KEY_GIPHY = API_KEY_GIPHY;
+        console.log("jow");
+        this.initialize();
+    }
+
+    initialize(){
+        this.getGiphy();
+    }
+
+    getGiphy(){
+        let urlGiphy = `https://api.giphy.com/v1/gifs/search?api_key=${this.API_KEY_GIPHY}&q=weather&limit=25&offset=0&rating=G&lang=en`;
+        
+        fetch(urlGiphy)
+            .then(response => {
+                return response.json();
+            })
+            .then(json => {
+                let giphy = document.createElement("div");
+                //giphy.innerHTML = json.currently.summary;
+                document.querySelector("body").appendChild(giphy);
+        });
+    }
+}
+
+let app_Giphy = new Giphy('Gjxedg0F0pjq4IP3y0xxP8X63zYwc8cx');
+
