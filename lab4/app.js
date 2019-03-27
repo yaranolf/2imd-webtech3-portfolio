@@ -74,8 +74,8 @@ class Giphy{
             //let idImage = JSON.parse(response.data[id]);
             //let idImage = JSON.parse(response,{data:id});
             //let idImage = JSON.parse(response.data),id;
+            //let idImage = json.result(data[id]);
 
-            let idImage = json.result[id];
 
             //images preview_webp --> uit JSON stringify en kunnen displayen in div
             let urlImage = `https://media${media}.giphy.com/media/${idImage}/giphy-preview.webp`;
