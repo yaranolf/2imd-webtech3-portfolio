@@ -53,7 +53,7 @@ class Giphy{
 
     getGiphy(){
         let q = 'weather';
-        let urlGiphy = `https://api.giphy.com/v1/gifs/search?api_key=${this.API_KEY_GIPHY}&q${q}&limit=25&offset=1&rating=G&lang=en`;
+        let urlGiphy = `https://api.giphy.com/v1/gifs/search?api_key=${this.API_KEY_GIPHY}&q=${q}&limit=25&offset=1&rating=G&lang=en`;
         fetch(urlGiphy)
         .then(response => {
             return response.json();
@@ -61,10 +61,11 @@ class Giphy{
         .then(json => {
             console.log(JSON.stringify(json));
             let giphy = document.createElement("div");
-            giphy.innerHTML = json.summary;
+
+            //images preview_webp --> uit JSON stringify en kunnen displayen in div
+
+            //giphy.innerHTML = JSON.stringify(json);
             document.querySelector("body").appendChild(giphy);
-            //console.log(json.currently.summary);
-            //console.log(json);
         });
     }
 }
