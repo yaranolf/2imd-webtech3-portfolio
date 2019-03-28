@@ -64,7 +64,7 @@ class Giphy{
 
             //media in link gaat van 0 tot 4, randomizer
             let media = Math.floor(Math.random()*5);
-
+            let randArrId = Math.floor(Math.random()*26);
             //vloeken op de juiste syntax om id uit json response te krijgen
             /*let data = JSON.parse(data);
             for(let i = 0; i < data.length; i++){
@@ -75,6 +75,9 @@ class Giphy{
             //let idImage = JSON.parse(response,{data:id});
             //let idImage = JSON.parse(response.data),id;
             //let idImage = json.result(data[id]);
+            
+            let idImage = json.data[randArrId]["id"];
+            console.log(idImage);
 
 
             //images preview_webp --> uit JSON stringify en kunnen displayen in div
