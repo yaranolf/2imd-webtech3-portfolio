@@ -60,7 +60,7 @@ class Giphy{
         })
         .then(json => {
             console.log(json);
-            let giphy = document.createElement("div");
+            let giphy = document.createElement("section");
 
             //media in link gaat van 0 tot 4, randomizer
             let media = Math.floor(Math.random()*5);
