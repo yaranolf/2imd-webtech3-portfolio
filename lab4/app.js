@@ -18,7 +18,7 @@ class Weather{
         let lng = position.coords.longitude;
         this.getWeather(lat, lng);
     }, err => {
-        console.log("Didn't think so cutie");
+        console.log("Didn't think so man");
     });
     }
 
@@ -63,7 +63,9 @@ class Giphy{
             let giphy = document.createElement("section");
 
             //media in link gaat van 0 tot 4, randomizer
-            let media = Math.floor(Math.random()*5);
+            let mediaKey = Math.floor(Math.random()*5);
+
+
             let randArrId = Math.floor(Math.random()*26);
             //vloeken op de juiste syntax om id uit json response te krijgen
             /*let data = JSON.parse(data);
@@ -81,7 +83,7 @@ class Giphy{
 
 
             //images preview_webp --> uit JSON stringify en kunnen displayen in div
-            let urlImage = `https://media${media}.giphy.com/media/${idImage}/giphy-preview.webp`;
+            let urlImage = `https://media${mediaKey}.giphy.com/media/${idImage}/giphy-preview.webp`;
 
             giphy.innerHTML = `<img src=${urlImage}>`;
             document.querySelector("body").appendChild(giphy);
