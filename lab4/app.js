@@ -65,8 +65,9 @@ class Giphy{
             //media in link gaat van 0 tot 4, randomizer
             let mediaKey = Math.floor(Math.random()*5);
 
-
+            //randomizer om een array (json response) aan te duiden en image id uit te halen
             let randArrId = Math.floor(Math.random()*26);
+
             //vloeken op de juiste syntax om id uit json response te krijgen
             /*let data = JSON.parse(data);
             for(let i = 0; i < data.length; i++){
@@ -82,7 +83,7 @@ class Giphy{
             console.log(idImage);
 
 
-            //images preview_webp --> uit JSON stringify en kunnen displayen in div
+            //images preview_webp --> url uit JSON response en kunnen displayen als img
             let urlImage = `https://media${mediaKey}.giphy.com/media/${idImage}/giphy-preview.webp`;
 
             giphy.innerHTML = `<img src=${urlImage}>`;
