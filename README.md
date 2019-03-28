@@ -15,4 +15,5 @@
 ![Grid](https://github.com/yaranolf/2imd-webtech3-portfolio/blob/master/lab2/20190303_css_grid_done.png)
 
 ## Lab 4
-Link naar codepen https://codepen.io/yaranolf/pen/KEOVgX
+[Lab 4: Weather app (API)](https://github.com/yaranolf/2imd-webtech3-lab4)
+[Link Codepen](https://codepen.io/yaranolf/pen/KEOVgX)
