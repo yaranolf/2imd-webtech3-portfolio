@@ -7,18 +7,24 @@ class Note {
   }
   
   createElement(title){
-    //note aanmaken & remove btn bijvoegen
+    //note aanmaken
     let newNote = document.createElement('div');
-    newNote.classList.add('card');
+    //class card toevoegen voor css
+    newNote.setAttribute('class', 'card');
+    
+    //'inhoud' note aanmaken
+    let content = document.createElement('p');
+    content.innerHTML = title;
+    //removeBtn bijvoegen
     let removeBtn = document.createElement('a');
+    //class card-remove toevoegen voor css
+    removeBtn.setAttribute('class', 'card-remove');
+    //btn klikbaar maken
+    removeBtn.setAttribute('href', '#');
     removeBtn.innerHTML = "Remove";
     
     // HINT🤩 a.addEventListener('click', this.remove.bind(newNote));
     removeBtn.addEventListener('click', this.remove.bind(newNote));
-
-    //'inhoud' note aanmaken
-    let content = document.createElement('p');
-    content.innerHTML = this.title;
 
     newNote.appendChild(content);
     newNote.appendChild(removeBtn);
@@ -44,7 +50,7 @@ class Note {
     }
 
     contentToStore.push(this.title);
-    localStorage.setItem(`note`, JSON.stringify(contentToStore));
+    localStorage.setItem('note', JSON.stringify(contentToStore));
     }
   
   remove(){
@@ -52,6 +58,7 @@ class Note {
     // in this function, 'this' will refer to the current note element
 
     //https://mariusschulz.com/blog/removing-elements-from-javascript-arrays
+
 
   } 
 }
