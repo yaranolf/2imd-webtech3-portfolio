@@ -112,8 +112,6 @@ class App {
     note.saveToStorage();
     this.reset();
   }
-  
-
 }
 
 let app = new App();
