@@ -43,12 +43,6 @@ class Note {
     // localStorage only supports strings, not arrays
     // if you want to store arrays, look at JSON.parse and JSON.stringify
 
-    let contentToStore = JSON.parse(localStorage.getItem('note'));
-    
-    if(contentToStore == null){
-      contentToStore = [];
-    }
-
     contentToStore.push(this.title);
     localStorage.setItem('note', JSON.stringify(contentToStore));
     }
@@ -58,7 +52,6 @@ class Note {
     // in this function, 'this' will refer to the current note element
 
     //https://mariusschulz.com/blog/removing-elements-from-javascript-arrays
-
 
   } 
 }
@@ -87,10 +80,14 @@ class App {
     let endOfInspiration = JSON.parse(localStorage.getItem('note'));
     if(endOfInspiration != null && (endOfInspiration).length > 0){
       //for-loop?
-      endOfInspiration.forEach(item => {
+      for(let i = 0; i <= note.length; i++){
         let note = new Note(item);
         note.add();
-      });
+      }
+      /*endOfInspiration.forEach(item => {
+        let note = new Note(item);
+        note.add();
+      });*/
     }
   }
   

@@ -9,6 +9,8 @@ router.get('/', function(req, res, next) {
 
 router.get('/messages', messageController.get);
 
+//router.post('/messages', messageController.post);
+
 router.post('/messages', (req, res, next)=>{
   let text = req.body.text;
   let user = req.body.user;
